@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang=”pt-br” xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../estilo/scripts/script.js"></script>
+    <link href="../estilo/css/menu.css" rel="stylesheet">
+    <link href="../estilo/css/index.css" rel="stylesheet">
+    <link href="../estilo/css/form.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../estilo/imagens/planeta_si.png">
+    <title>| Vendedores |</title>
+
+</head>
+
+<body>
+
+	<header>
+		<nav>
+			<a class="logo0" href="/"> <img class="logo"
+				src="../estilo/imagens/logo_planeta.png">
+			</a>
+			<div class="mobile-menu">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+			</div>
+			<ul class="nav-list">
+				<li><a href="/">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="/cadastrarMarca">Cadastrar
+						Marcas</a></li>
+				<li class="nav-item"><a class="nav-link" href="/marcas">
+						Marcas</a></li>
+				<li><a href="/cadastrarGaragem">Cadastrar Garagem</a></li>
+				<li><a href="garagem">Garagens</a></li>
+				<li><a href="/galeria">Galeria</a></li>
+				<li><a href="/login">Login</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="container">
+
+		<h1>Informações da Garagem:</h1>
+		<div class="cont">
+		<div  th:each="garagem : ${garagens}">
+
+			<br>
+
+			<p>
+				<b>Nome:</b> <span th:text="${garagem.nome}"></span>
+			</p>
+			<p>
+				<b>Data de nascimento:</b> <span th:text="${garagem.endereco}"></span>
+			</p>
+			<p>
+				<b>E-mail:</b> <span th:text="${garagem.email}"></span>
+			</p>
+</div>
+
+			<br> <br>
+
+			<div class="con">
+
+				<h2>Cadastrar Vendedor:</h2>
+
+				<th:block th:include="mensagemValidacao"></th:block>
+
+				<br>
+
+				<form method="post" th:object="${vendedor}">
+
+
+
+
+						<div class="form-group">
+							<label for=""><b>Vendedor</b> </label> <input type="text"
+								value="" name="nome" class="form-control"
+								placeholder="Nome Completo" required />
+						</div>
+						<div class="row">
+							<div class="col">
+
+								<div class="col">
+									<label for=""><b>Cpf</b> </label><input type="number" value=""
+										name="cpf" placeholder="123.456.789-00"
+										class="validate form-control" required />
+								</div>
+
+								<div class="col">
+									<label for=""><b>Contato</b> </label> <input type="number"
+										value="" name="contato" class="form-control"
+										placeholder="Telefone para Contato" required />
+								</div>
+							</div>
+						</div>
+						<button type="submit" class="button">Adicionar Vendedor</button>
+				</form>
+
+
+			</div>
+
+			<th:block th:include="mensagemValidacao"></th:block>
+
+			<br> <br>
+<div class="con">
+			<h2>Cadastrados:</h2>
+			<br>
+			<table
+				class="table table-hover table-responsive w-auto table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Nome do Vendedor:</th>
+						<th scope="col">Cpf:
+						<th scope="col">Contato:</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr th:each="vendedor : ${vendedores}">
+						<td><span th:text="${vendedor.nome}"> </span></td>
+						<td><span th:text="${vendedor.cpf}"> </span></td>
+						<td><span th:text="${vendedor.contato}"> </span></td>
+						<td><a 
+							th:href="${(#mvc.url('GC#deletarVendedor').arg(0, vendedor.cpf)).build()}">
+								<button type="button" class="button2">Excluir</button>
+						</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div style="height: 100px;"></div>
+
+	<div class="footer">
+			<p>|   Planeta Carros - Projeto Integrador SENAI - Danilo Lopes Nascimento   |</p>
+		</div>
+
+
+
+	<script src="../estilo/scripts/menu.js"></script>
+
+</body>
+
+</html>

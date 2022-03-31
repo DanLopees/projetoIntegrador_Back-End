@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang=”pt-br” xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+    <head>
+       <meta charset="UTF-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <script src="estilo/scripts/script.js"></script>
+       <link rel="icon" type="image/x-icon" href="estilo/imagens/planeta_si.png">
+       <link href="estilo/css/menu.css" rel="stylesheet">
+       <link href="estilo/css/video.css" rel="stylesheet">
+       <title>| Galeria |</title>
+    </head>
+
+<body>
+	
+     <header>
+        <nav>
+            <a class="logo0" href="/">
+                <img class="logo" src="estilo/imagens/logo_planeta.png">
+            </a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/cadastrarMarca">Cadastrar Marcas</a></li>
+                <li class="nav-item"><a class="nav-link" href="/marcas"> Marcas</a></li>
+                <li><a href="/cadastrarGaragem">Cadastrar Garagem</a></li>
+                <li><a href="garagem">Garagens</a></li>
+                <li><a href="/galeria">Galeria</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+    <div class="botoes">
+        <video id="Play_Video" width="600"  controls="controls">
+            <source src="estilo/media/video.mp4" type="video/mp4">  
+        </video>
+        <br>
+        <button onclick="play_pause()" class="buttonClass">Play/Pause</button>
+        <button onclick="aumentar_volume()" class="buttonClass"> +</button>
+        <button onclick="diminuir_volume()" class="buttonClass"> -</button>
+        <button onclick="mute()" class="buttonClass">Mute</button>
+        <button onclick="makeBig()" class="buttonClass">Ampliar</button>
+        <button onclick="makeSmall()" class="buttonClass">Reduzir</button>
+        <button onclick="makeNormal()" class="buttonClass">Normal</button>
+        <button onclick="telaCheia()" class="buttonClass">Tela cheia</button>
+    </div>
+   
+
+<div class="carousel">
+  <div><img src="estilo/imagens/01.jpg" alt="" /></div>
+  <div><img src="estilo/imagens/02.jpg" alt="" /></div>
+  <div><img src="estilo/imagens/03.jpg" alt=""/></div>
+  <div><img src="estilo/imagens/04.jpg" alt="" /></div>
+  <div><img src="estilo/imagens/05.jpg" alt="" /></div>
+  <div><img src="estilo/imagens/06.jpg" alt="" /></div>
+  
+</div>
+
+    </main>
+<div class="footer">
+			<p>|   Planeta Carros - Projeto Integrador SENAI - Danilo Lopes Nascimento   |</p>
+		</div>
+    <script src="estilo/scripts/menu.js"></script> 
+    <script src="estilo/media/video.js"></script>
+  
+</body>
+
+</html>

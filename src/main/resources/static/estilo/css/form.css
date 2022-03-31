@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    
+}.con{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    position: relative;
+    margin: auto;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    width: 70vw;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.767);
+    backdrop-filter: blur(7px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.con h1{
+	text-align:center;
+}
+.cont{
+	padding-left: 30px;
+    padding-right: 90px;
+    padding-bottom: 30px;
+    position: relative;
+    margin: auto;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    width: 70vw;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.596);
+    box-shadow: 0 8px 32px 0 rgba(255, 0, 0, 0.37);
+    backdrop-filter: blur(7px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    filter: drop-shadow(0 0 0.4em rgb(38, 212, 255));
+	
+}
+.cont h1{
+	text-align:center;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid red;
+}
+input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid red;
+}
+input[type=date] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid red;
+}
+textarea{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid red;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color: #ffffff;}

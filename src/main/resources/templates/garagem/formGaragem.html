@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang=”pt-br” xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../estilo/scripts/script.js"></script>
+    <link href="../estilo/css/menu.css" rel="stylesheet">
+    <link href="../estilo/css/index.css" rel="stylesheet">
+    <link href="../estilo/css/form.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../estilo/imagens/planeta_si.png">
+    <title>| Formulário Marcas |</title>
+</head>
+
+<body>
+
+<header>
+        <nav>
+            <a class="logo0" href="/">
+                <img class="logo" src="../estilo/imagens/logo_planeta.png">
+            </a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/cadastrarMarca">Cadastrar Marcas</a></li>
+                <li class="nav-item"><a class="nav-link" href="/marcas"> Marcas</a></li>
+                <li><a href="/cadastrarGaragem">Cadastrar Garagem</a></li>
+                <li><a href="garagem">Garagens</a></li>
+                <li><a href="/galeria">Galeria</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+	<div class="con">
+<br>
+		<h1>Cadastrar Garagem</h1>
+
+		<br>
+
+		<th:block th:include="mensagemValidacao"></th:block>
+
+		<form method="post">
+
+
+			<div class="form-group">
+				<label for=""><b>Nome da Garagem:</b> </label> <input type="text" class="form-control" value=""
+					placeholder="Insira o nome da Garagem" name="nome" required> <small class="form-text text-muted"><i>
+			</i></small>
+			</div>
+
+			<div class="row">
+				<div class="col">
+
+					<div class="form-group">
+						<label for=""><b>Endereço:</b></label> <input type="text" value="" name="endereco"
+							class="form-control" required /> <small class="form-text text-muted"><i></i></small>
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						<label for=""><b>Email:</b></label>  <input type="text" 
+							value="" name="email" class="form-control" required /> <small
+							class="form-text text-muted"><i></i></small>
+					</div>
+
+				</div>
+			</div>
+
+			<button type="submit" class="button">Adicionar Garagem</button>
+
+		</form>
+
+	</div>
+
+
+	<div style="height: 100px;"></div>
+
+	    <br>
+  <div class="footer">
+			<p>|   Planeta Carros - Projeto Integrador SENAI - Danilo Lopes Nascimento   |</p>
+		</div>
+
+
+    <script src="../estilo/scripts/menu.js"></script>
+
+
+</body>
+
+</html>

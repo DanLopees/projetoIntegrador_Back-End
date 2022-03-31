@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
+    <script src="estilo/scripts/script.js"></script>
+    <link href="estilo/css/menu.css" rel="stylesheet">
+    <link href="estilo/css/index.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="estilo/imagens/planeta_si.png">
+    <title>| Formulario |</title>
+</head>
+
+<body>
+<header>
+        <nav>
+            <a class="logo0" href="/">
+                <img class="logo" src="estilo/imagens/logo_planeta.png">
+            </a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/cadastrarMarca">Cadastrar Marcas</a></li>
+                <li class="nav-item"><a class="nav-link" href="/marcas"> Marcas</a></li>
+                <li><a href="/cadastrarGaragem">Cadastrar Garagem</a></li>
+                <li><a href="garagem">Garagens</a></li>
+                <li><a href="/galeria">Galeria</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="login">
+            <main class="conta">
+                <h2>Cadastre-se</h2>
+                <form action="">
+                    <div class="input-field">
+                        <label for="nome"> Nome</label>
+                        <input type="text" name="nome" id="nome" required>
+                        <div class="underline"></div>
+                    </div>
+                    <div class="input-field">
+                        <label for="nome"> CPF/CNPJ</label>
+                        <input type="text" name="cpf" id="cpf" autocomplete="off" required>
+                        <div class="underline"></div>
+                    </div>
+                    <div class="input-field">
+                        <label for="email"> Email</label>
+                        <input type="email" name="email" id="email" required>
+                        <div class="underline"></div>
+                    </div>
+                    <div class="input-field">
+                        <label for="cel"> Celular</label>
+                        <input type="text" name="cel" id="cel" autocomplete="off" required>
+                        <div class="underline"></div>
+                    </div>
+                    <div class="input-field">
+                        <label for="tel"> Telefone</label>
+                        <input type="text" name="cel" id="cel" autocomplete="off" required>
+                        <div class="underline"></div>
+                    </div>
+                    <div class="input-field">
+                        <label>CEP</label>
+                        <input name="cep" type="text" id="cep" value="" maxlength="9"
+                            onblur="pesquisacep(this.value);" />
+                        <div class="underline"></div>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Cidade</label>
+                        <input name="cidade" type="text" id="cidade" />
+                        <div class="underline"></div>
+                    </div>
+                    <div class="input-field">
+                        <label>Estado</label>
+                        <input name="uf" type="text" id="uf" />
+                        <div class="underline"></div>
+                    </div>
+
+                    <button type="button" class="botao" onclick="return validar_tudo()"> Cadastrar
+                    </button>
+                </form>
+
+                <div class="footerr">
+                    <span>Ou conecte-se às redes sociais</span>
+                    <div class="social-fields">
+                        <div class="social-field twitter">
+                            <a href="https://twitter.com/">
+                                <i class="fab fa-twitter"></i>
+                                Entrar com o Twitter
+                            </a>
+                        </div>
+                        <div class="social-field facebook">
+                            <a href="https://www.facebook.com/">
+                                <i class="fab fa-facebook-f"></i>
+                                Entrar com o Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </main>
+
+<div class="footer">
+			<p>|   Planeta Carros - Projeto Integrador SENAI - Danilo Lopes Nascimento   |</p>
+		</div>
+    <script src="estilo/scripts/menu.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+</body>
+
+
+</html>

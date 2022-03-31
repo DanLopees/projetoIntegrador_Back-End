@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="estilo/scripts/script.js"></script>
+    <link href="estilo/css/menu.css" rel="stylesheet">
+    <link href="estilo/css/index.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="estilo/imagens/planeta_si.png">
+    <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
+	<link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css " rel="stylesheet">
+    <title>Login</title>
+</head>
+
+<body>
+<header>
+        <nav>
+            <a class="logo0" href="/">
+                <img class="logo" src="estilo/imagens/logo_planeta.png">
+            </a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/cadastrarMarca">Cadastrar Marcas</a></li>
+                <li class="nav-item"><a class="nav-link" href="/marcas"> Marcas</a></li>
+                <li><a href="/cadastrarGaragem">Cadastrar Garagem</a></li>
+                <li><a href="garagem">Garagens</a></li>
+                <li><a href="/galeria">Galeria</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+            <a class="links" id="paracadastro"></a>
+            <a class="links" id="paralogin"></a>
+   
+                <div id="login">
+                    <main class="conta">
+                        <form method="post" action="">
+                            <h1>Login</h1>
+                            <h2></h2>
+                            <div class="input-field">
+                                <label for="nome"> Email</label>
+                                <input type="text" name="nome" id="nome" required
+                                    placeholder="ex. seuemail@email.com">
+                                <div class="underline"></div>
+                            </div>
+
+                            <div class="input-field">
+                                <label for="nome"> Senha</label>
+                                <input type="text" name="nome" id="nome" required placeholder="Digite sua senha">
+                                <div class="underline"></div>
+                            </div>
+                            <br>
+                            <p>
+                                <input type="checkbox" name="manterlogado" id="manterlogado" value="" />
+                                <label for="manterlogado">Manter-me logado</label>
+                            </p>
+
+                            <p>
+                                <input type="submit" value="Logar" />
+                            </p>
+                            <br>
+                            <p class="link">
+                                Ainda não tem conta?
+                                <a class="cad" href="/formulario">Cadastre-se</a>
+                            </p>
+                        </form>
+                    </main>
+                </div>
+             
+
+    </main>
+<div class="footer">
+			<p>|   Planeta Carros - Projeto Integrador SENAI - Danilo Lopes Nascimento   |</p>
+		</div>
+
+       <script src="estilo/scripts/menu.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+</body>
+
+</html>

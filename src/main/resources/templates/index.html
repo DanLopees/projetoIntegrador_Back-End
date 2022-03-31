@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang=”pt-br” xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="estilo/scripts/script.js"></script>
+<link href="estilo/css/menu.css" rel="stylesheet">
+<link href="estilo/css/index.css" rel="stylesheet">
+<title>| Planeta Carros |</title>
+<link rel="icon" type="image/x-icon" href="estilo/imagens/planeta_si.png">
+</head>
+
+<body>
+
+	<header>
+		<nav>
+			<a class="logo0" href="/"> <img class="logo"
+				src="estilo/imagens/logo_planeta.png">
+			</a>
+			<div class="mobile-menu">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+			</div>
+			<ul class="nav-list">
+
+				<li class="nav-item"><a class="nav-link" href="/cadastrarMarca">Cadastrar
+						Marcas</a></li>
+				<li class="nav-item"><a class="nav-link" href="/marcas">Listar
+						Marcas</a></li>
+				<li><a href="/cadastrarGaragem">Cadastrar Garagem</a></li>
+				<li><a href="garagem">Garagens</a></li>
+				<li><a href="/galeria">Galeria</a></li>
+				<li><a href="/login">Login</a></li>
+			</ul>
+		</nav>
+	</header>
+
+
+	<div class="container">
+<br>
+<br>
+<br>
+<br>
+
+		<div class="texto">
+			<h1>Os primórdios do automóvel</h1>
+			<br> 
+			<p>Antes de falarmos mais sobre o primeiro carro no Brasil,
+			precisamos citar que, em 1885, o primeiro veículo movido à gasolina
+			foi criado. O primeiro modelo, então, foi desenvolvido por um alemão
+			chamado Karl Benz, e batizado de Motorwagen. </p>
+			<p>Mas, a nossa história
+		    começa mesmo com a curiosidade de Alberto Santos Dumont, que mais
+			tarde seria conhecido como o pai da aviação. Com o surgimento dos
+			primeiros automóveis na França, por volta de 1891, ele decidiu
+			estudar essa novidade e trazê-la para o Brasil. Então, passou a
+			circular pelas ruas esburacadas o primeiro veículo movido a gasolina.</p>
+			<p>Era um modelo Peugeot Type 3 Vis-a-Vis, de 1891, conhecido na França
+			como Peugeot Voiturette. O mesmo era equipado com motor Daimler,
+			movido a gasolina, com dois cilindros em V e 3,5 cv de potência
+			máxima. O modelo permitia ao carro alcançar 18 km/h. E vale lembrar
+			que, a produção da Peugeot havia começado em 1890, apenas com
+			protótipos, e os primeiros carros foram fabricados a partir de 1891.<p>
+
+		</div>
+		<br>
+		<br>
+
+<div class="pesquisa">
+		<h3>Encontre a Marca do seu Carro ou Cadastre uma</h3>
+		<a href="/marcas" class="button1">Listar Marca</a> <a
+			href="/cadastrarMarca" class="button">Cadastrar Marca</a>
+		<div>
+			<h3>Garagens com Carros a Venda</h3>
+
+			<a href="/garagem" class="button1">Listar Garagens</a> <a
+				href="/cadastrarGaragem" class="button">Cadastrar Garagem</a>
+		</div>
+
+			<!-- 	nova busca -->
+			<br> <br>
+
+			<h3>Pesquisar no sistema</h3>
+
+
+
+
+			<form class="form-inline" method="post">
+
+				<label for="cars" class="my-3 p-2 w-100">
+					<h5>Tipo de busca:</h5>
+				</label> <select name="nome" id="nome" class="custom-select my-3 p-2 w-100"
+					required>
+					<option value="">Escolher...</option>
+					<option value="todos">Todos</option>
+					<option value="nomegaragem">Garagem</option>
+					<option value="nomevendedor">Vendedor</option>
+					<option value="nomecarro">Carro</option>
+					<option value="titulomarca">Marca</option>
+				</select>
+				<div class="col col-14 col-md-4">
+				<input
+						type="search" placeholder="Insira sua pesquisa..."
+						aria-label="Pesquisar" name="buscar" id="buscar" required>
+				</div>
+				<div class="col col-14 col-md-2">
+					<button class="button1" type="submit">Pesquisar</button>
+				</div>
+			</form>
+			<div class="row form-group justify-content-center w-100 p-2">
+				<h4>
+					<i><span th:text="${mensagem}"></i>
+				</h4>
+		
+			</div>
+
+			<div class="row form-group justify-content-center w-100 p-2">
+				<table
+					class="table table-hover table-responsive w-auto table-striped">
+
+					<tbody>
+						<tr th:each="garagem : ${garagens}">
+							<td><a
+								th:href="${(#mvc.url('GC#vendedores').arg(0, garagem.id)).build()}"><span
+									th:text="${garagem.nome}"></span></a> - em <i>garagens.</i></td>
+
+
+						</tr>
+						<tr th:each="marca : ${marcas}">
+							<td><a
+								th:href="${(#mvc.url('MC#detalhesMarca').arg(0, marca.codigo)).build()}"><span
+									th:text="${marca.nome}"></span></a> - em <i>marcas.</i></td>
+						</tr>
+
+
+						<tr th:each="vendedor : ${vendedores}">
+							<td><span th:text="${vendedor.nome}"></span> - <i>em
+									vendedores.</i></td>
+						</tr>
+
+						<tr th:each="carro : ${carros}">
+							<td><span th:text="${carro.nomeCarro}"></span> - <i>em
+									carros.</i></td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+</div>
+
+
+
+		<br>
+
+		<div class="footer">
+			<p>|   Planeta Carros - Projeto Integrador SENAI - Danilo Lopes Nascimento   |</p>
+		</div>
+
+
+		<script src="estilo/scripts/menu.js"></script>
+</body>
+
+</html>

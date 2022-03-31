@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang=”pt-br” xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../estilo/scripts/script.js"></script>
+    <link href="../estilo/css/menu.css" rel="stylesheet">
+    <link href="../estilo/css/index.css" rel="stylesheet">
+    <link href="../estilo/css/form.css" rel="stylesheet">
+    	<link rel="icon" type="image/x-icon" href="estilo/imagens/planeta_si.png">
+    <title>| Detalhes marcas |</title>
+
+</head>
+
+<body>
+
+     <header>
+        <nav>
+            <a class="logo0" href="/">
+                <img class="logo" src="../estilo/imagens/logo_planeta.png">
+            </a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/cadastrarMarca">Cadastrar Marcas</a></li>
+                <li class="nav-item"><a class="nav-link" href="/marcas">Listar Marcas</a></li>
+                <li><a href="/galeria">Galeria</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div th:each="marca : ${marca}" class="cont">
+            <h1>Detalhes da Marca</h1>
+
+            <br>
+
+            <p>
+                <b>Marca:</b> <span th:text="${marca.nome}"></span>
+            </p>
+            <p>
+                <b>Descrição da Marca:</b> <span th:text="${marca.descricao}"></span>
+            </p>
+            <p>
+                <b>Lançado em:</b> <span th:text="${marca.data}"></span>
+            </p>
+            <p>
+                <b>Preço Médio:</b> R$ <span th:text="${marca.preco}"></span>
+            </p>
+
+            <br> <br>
+
+
+            <div class="con">
+
+                <h2>Cadastrar Carro:</h2>
+
+                <th:block th:include="mensagemValidacao"></th:block>
+
+                <br>
+
+                <form method="post" th:object="${carro}">
+
+                    <div class="form-group">
+
+
+                        <div class="form-group">
+                            <label for=""><b>Carro</b> </label> <input type="text" value="" name="nomeCarro"
+                                class="form-control" placeholder="Nome/modelo" required />
+                        </div>
+                        <div class="row">
+                            <div class="col">
+
+                                <div class="col">
+                                    <label for=""><b>Placa</b> </label><input type="text" value=""
+                                        name="placa" placeholder="ABC1E23 - ABC-1234 " class="validate form-control"
+                                        required />
+                                </div>
+
+                                <div class="col">
+                                    <label for=""><b>Tipo</b> </label> <input type="text" value="" name="tipo"
+                                        class="form-control" placeholder="Categoria do Veiculo" required />
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="button">Adicionar Carro
+                        </button>
+                </form>
+            </div>
+            <br> <br>
+            <h2>Cadastrados:</h2>
+            <br>
+            <table class="table table-hover table-responsive w-auto table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Nome do Carro:
+                        </th>
+                        <th scope="col">Placa
+                        <th scope="col">Tipo:
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr th:each="carro : ${carros}">
+                        <td>
+                            <span th:text="${carro.nomeCarro}">
+
+                            </span>
+                        </td>
+                        <td>
+                            <span th:text="${carro.placa}">
+
+                            </span>
+                        </td>
+                        <td>
+                            <span th:text="${carro.tipo}">
+                            </span>
+                        </td>
+                        <td>
+                            <a class="waves-effect waves-light btn-small"
+                                th:href="${(#mvc.url('MC#deletarCarro').arg(0, carro.placa)).build()}">
+                                <button type="button" class="button2">Excluir
+                                </button>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div style="height: 100px;"></div>
+
+   <div class="footer">
+			<p>|   Planeta Carros - Projeto Integrador SENAI - Danilo Lopes Nascimento   |</p>
+		</div>
+
+    <script src="../estilo/scripts/menu.js"></script>
+</body>
+
+</html>

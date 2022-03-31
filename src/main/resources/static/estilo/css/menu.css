@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital@1&display=swap');
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+a {
+	font-size:20px;
+    color: rgb(255, 255,255);
+    text-decoration: none;
+    transition: 0.3s;
+    
+}
+
+a:hover{
+    opacity: 0.9;
+    color: #800101;
+}
+
+.logo{
+	filter: drop-shadow(0 0 0.4em rgb(38, 212, 255));
+    margin-left: -35%;
+    width: 90%; 
+    height: 80%;
+}
+nav{
+	filter: drop-shadow(0 0 0.4em rgb(255, 0, 0));
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Cabin', sans-serif;
+    background: #000000;
+    height: 7vh;
+    z-index: 999;
+    position: relative;
+
+    
+}
+main{
+    overflow-y: auto;
+    background: url("fundo.jpg") no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.nav-list{
+    list-style: none;
+    display: flex;
+    padding: 10px;
+}
+
+.nav-list li{
+    letter-spacing: 5px;
+    margin-left: 50px;
+}
+.mobile-menu div{
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+.mobile-menu{
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    body{
+        overflow: hidden;
+    }
+    .logo{
+        margin-left: 3%;
+        width: 90%; 
+        height: 80%;
+    }
+    .nav-list{
+        position:absolute;
+        z-index: 1;
+        top: 8vh;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background:#000000;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }    
+    .nav-list li{
+
+        opacity: 0;
+        letter-spacing: 5px;
+    	margin-left: 60px;
+    	 align-items: center;
+    }
+    .mobile-menu{
+        display: block;
+    }
+
+    .nav-list.active{
+        transform: translateX(0);
+    }
+
+    
+}
+@keyframes navLinkFade {
+    from{
+        opacity: 0;
+        transform:translate(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translate();
+    }
+    
+}
+.mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+    opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+}
+
+
+body {
+
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: rgb(255, 255, 255);
+    min-width: 320px;
+    min-height: 100vh;
+    padding: 1rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+main h2{
+    font-weight: 600;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+main h2::before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    bottom: 3px;
+    left: 0;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #e64747, #470000);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field {
+    position:relative;
+    
+}
+
+form .input-field:first-child {
+    margin-bottom: 1.5rem;
+}
+
+.input-field .underline::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.input-field .underline::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(45deg, #e64747, #470000);
+    transform: scaleX(0);
+    transition: all .3s ease-in-out;
+    transform-origin: left;
+}
+
+.input-field input:focus ~ .underline::after {
+    transform: scaleX(1);
+    
+}
+
+.input-field input {
+    outline: none;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    
+}
+
+.input-field input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+form input[type="submit"] {
+    margin-top: 2rem;
+    padding: 0.4rem;
+    width: 100%;
+    background: linear-gradient(to left, #e64747, #470000);
+    cursor: pointer;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 300;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+.botao{
+    margin-top: 2rem;
+    padding: 0.4rem;
+    width: 100%;
+    background: linear-gradient(to left, #e64747, #470000);
+    cursor: pointer;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 300;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+}
+form input[type="submit"]:hover {
+    letter-spacing: 0.5px;
+    background: linear-gradient(to right, #e64747, #470000);
+}
+
+.footerr {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.footerr span {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.footerr .social-field {
+    padding: 0.4rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.footerr .social-field a i {
+    margin: 0 0.5rem;
+    width: 15px;
+}
+
+.footerr .social-field a {
+    text-decoration: none;
+    color: white;
+}
+
+.footerr .social-field.twitter {
+    background: linear-gradient(to right, #56a7f2, #468aca);
+}
+
+.footerr .social-field.facebook {
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+}
+.login{
+    overflow-y: auto;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    min-height: 100%;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.cad{
+    color: rgb(255, 0, 0);
+}
+
+.conta {
+    background: rgb(255, 255, 255);
+    width:50px;
+    min-width: 400px;
+	height: 900px;
+    padding: 1rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+main h2{
+    font-weight: 300;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+main h2::before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    bottom: 3px;
+    left: 0;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #e64747, #470000);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; 
+}
+
